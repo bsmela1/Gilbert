@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://source/Dodatki/Bullet.gd" type="Script" id=1]
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 16
+collision_mask = 9
+script = ExtResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( -10.6189, -9.165, 27.1831, -0.152611, -11.1196, 11.1129 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -11.3699, -9.66569, 26.432, -0.402954, -11.6203, 11.3632 )
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
